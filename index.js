@@ -74,6 +74,10 @@ app.use(express.json());
 // 4. Use the webhook middleware provided by the Bot
 app.use(bot.createWebhookMiddleware());
 
+app.get('/', (req, res) => {
+  res.send({ActivePlayers: playersCount, ActiveRooms: roomCount})
+})
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`🚀 Bot server is running on port ${PORT}`);
