@@ -1,0 +1,17 @@
+{
+  "name": "tg-bot",
+  "version": "1.0.0",
+  "description": "telegram bot",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start" : "node index.js"
+  },
+  "author": "Y0red",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "y0red-bot": "^1.0.0",
+	  "axios": "^1.7.2"
+  }
+}
