@@ -72,7 +72,7 @@ const app = express();
 app.use(express.json());
 
 // 4. Use the webhook middleware provided by the Bot
-app.use(bot.createWebhookMiddleware('https://api.telegram.org/bot7374922777:AAFBHb-q3h9KTrpp-HffAKvz1rBzvs2X_B4'));
+app.use(bot.createWebhookMiddleware());
 
 //app.get('/', (req, res) => {
   //res.send({ActivePlayers: playersCount, ActiveRooms: roomCount})
