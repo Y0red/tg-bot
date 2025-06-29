@@ -1,6 +1,5 @@
 import express from 'express';
-import { Bot } from './src/index.js'; 
-//import { Bot } from 'y0red-bot/src/index';
+import { Bot } from 'y0red-bot';
 
 // --- CONFIGURATION ---
 const BOT_TOKEN = process.env.BOT_TOKEN || 'YOUR_SUPER_SECRET_BOT_TOKEN';
