@@ -51,7 +51,7 @@ bot.onCallbackQuery((ctx) => {
   if (callbackQuery.data === `play_${GAME_SHORT_NAME}`) {
     ctx.api.answerCallbackQuery({
       callback_query_id: callbackQuery.id,
-      url: 'https://t.me/PlayGroundGamesBot/PGGC', 
+      url: 'https://yared-portfolio-site.vercel.app/index.html', 
       showAlert: 'true'
     }).catch("sendERROR"+console.error);
   }
