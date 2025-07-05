@@ -48,12 +48,11 @@ export class TelegramApiClient {
     });
   }
 
-  sendGame({chat_id, game_short_name})
+  sendGame({chat_id, game_short_name, button_text})
   {
     return this._apiCall('sendGame',{
       chat_id,
       game_short_name,
-      button_text,
       reply_markup: {
         inline_keyboard: [
           [{ text: button_text, callback_data: `play_${game_short_name}` }]
