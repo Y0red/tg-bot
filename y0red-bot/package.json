@@ -1,0 +1,39 @@
+{
+  "name": "y0red-bot",
+  "version": "1.0.1",
+  "description": "A modular and extensible Node.js library to create Telegram Games and Mini Apps with webhook support.",
+  "main": "src/index.js",
+  "type": "module",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "start": "node examples/webhook-bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Y0red/y0red-bot.git"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "games",
+    "mini-apps",
+    "telegram-bot",
+    "webhook"
+  ],
+  "author": "Y0red",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Y0red/y0red-bot/issues"
+  },
+  "homepage": "https://github.com/Y0red/y0red-bot#readme",
+  "dependencies": {
+    "axios": "^1.7.2"
+  },
+  "devDependencies": {
+    "express": "^4.19.2"
+  }
+}

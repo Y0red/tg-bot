@@ -1,5 +1,6 @@
 import express, { text } from 'express';
-import { Bot } from 'y0red-bot';
+//import { Bot } from 'y0red-bot';
+import { Bot } from './y0red-bot/src/index.js';
 
 // --- CONFIGURATION ---
 const BOT_TOKEN = process.env.BOT_TOKEN || 'YOUR_SUPER_SECRET_BOT_TOKEN';
@@ -26,7 +27,13 @@ bot.onCommand('/start', (ctx) => {
 
 // The '/game' command can do the same thing
 bot.onCommand('/game', (ctx) => {
-    bot.commandHandlers.get('/start')(ctx);
+    //bot.commandHandlers.get('/start')(ctx);
+    console.log(`sending game`);
+    const chatId = ctx.update.message.chat.id;
+  ctx.api.sendGame({
+      chat_id: chatId,
+      game_short_name: "PGGC"}
+    ).catch(console.error);
 });
 
 // Handle the /menu command for Mini Apps
