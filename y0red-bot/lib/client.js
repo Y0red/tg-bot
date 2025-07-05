@@ -54,7 +54,7 @@ export class TelegramApiClient {
       
       reply_markup: {
         inline_keyboard: [
-          [{ request_contact }]
+          [{text: button_text, request_contact }]
         ]
       }
     });
