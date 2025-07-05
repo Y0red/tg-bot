@@ -55,11 +55,12 @@ bot.onCommand('/score', (ctx) => {
 bot.onCallbackQuery((ctx) => {
   const callbackQuery = ctx.update.callback_query;
   console.log(`Received callback query: ${callbackQuery.data}`);
+  console.log(ctx.update);
 
   if (callbackQuery.data === `play_${GAME_SHORT_NAME}`) {
     ctx.api.answerCallbackQuery({
       callback_query_id: callbackQuery.id,
-      url: 'https://yared-portfolio-site.vercel.app/'
+      url: 'PGGC'
     }).catch("sendERROR"+console.error);
   }
 });
