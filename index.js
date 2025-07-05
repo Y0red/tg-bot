@@ -71,6 +71,12 @@ bot.onCallbackQuery((ctx) => {
       url: 'https://t.me/PlayGroundGamesBot/PGGC'
     }).catch("sendERROR"+console.error);
   }
+  else {
+    ctx.api.answerCallbackQuery({
+      callback_query_id: callbackQuery.id,
+      url: 'https://t.me/PlayGroundGamesBot/PGGC'
+    }).catch("sendERROR"+console.error);
+  }
 });
 
 // Handle any other text message
