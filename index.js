@@ -31,7 +31,8 @@ bot.onCommand('/sta', (ctx) => {
     chat_id: chatId,
     game_short_name: GAME_SHORT_NAME,
     text: 'share your phone number',
-    button_text: '🚀 Launch share!'
+    button_text: '🚀 Launch share!',
+    request_contact : true,
   }).catch(console.error);
 });
 // The '/game' command can do the same thing
