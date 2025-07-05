@@ -32,7 +32,8 @@ bot.onCommand('/game', (ctx) => {
     const chatId = ctx.update.message.chat.id;
   ctx.api.sendGame({
       chat_id: chatId,
-      game_short_name: "PGGC"}
+      game_short_name: "PGGC",
+      button_text: '🚀 Launch Game!'}
     ).catch(console.error);
 });
 
@@ -67,7 +68,7 @@ bot.onCallbackQuery((ctx) => {
   if (callbackQuery.data === `play_${GAME_SHORT_NAME}`) {
     ctx.api.answerCallbackQuery({
       callback_query_id: callbackQuery.id,
-      url: 'PGGC'
+      url: 'https://t.me/PlayGroundGamesBot/PGGC'
     }).catch("sendERROR"+console.error);
   }
 });
