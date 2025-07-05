@@ -35,14 +35,14 @@ export class TelegramApiClient {
   }
 
   // --- Methods for Games and Mini Apps ---
-
-  sendMessageWithGame({ chat_id, game_short_name, text = 'share', button_text = 'share' }) {
+ //callback_data: 'contact'
+  sendMessageWithGame({ chat_id, game_short_name, text = 'share', button_text = 'share' , request_contact}) {
     return this._apiCall('sendMessage', {
       chat_id,
       text,
       reply_markup: {
         inline_keyboard: [
-          [{ text: button_text, callback_data: 'contact' }]
+          [{ text: button_text, request_contact}]
         ]
       }
     });
