@@ -48,7 +48,7 @@ export class TelegramApiClient {
     });
   }
 
-   sendMessageWithGame({ chat_id, game_short_name, text = 'Let\'s play!', button_text = '🎮 Play Now' }) {
+   sendGame({ chat_id, game_short_name, text = 'Let\'s play!', button_text = '🎮 Play Now' }) {
     return this._apiCall('sendGame', {
       chat_id,
       text,
