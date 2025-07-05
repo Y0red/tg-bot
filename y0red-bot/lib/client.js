@@ -48,6 +48,18 @@ export class TelegramApiClient {
     });
   }
 
+  requestContact({ chat_id, text = 'Share Phone Number', button_text = 'Share' }) {
+    return this._apiCall('sendMessage', {
+      chat_id,
+      text,
+      reply_markup: {
+        inline_keyboard: [
+          [{ text: button_text, callback_data: `share`, request_contact:'True' }]
+        ]
+      }
+    });
+  }
+
    sendGame({ chat_id, game_short_name, text = 'Let\'s play!', button_text = '🎮 Play Now' }) {
     return this._apiCall('sendGame', {
       chat_id,

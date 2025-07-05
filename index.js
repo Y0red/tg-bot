@@ -54,6 +54,13 @@ bot.onCommand('/score', (ctx) => {
   const chatId = ctx.update.message.chat.id;
   console.log('sending score');
   ctx.api.setGameScore({chatId, score: 20, game_short_name : 'PGGC' }
+  ).catch(console.error);
+});
+
+bot.onCommand('/share', (ctx) => {
+  const chatId = ctx.update.message.chat.id;
+  console.log('sharing contact');
+  ctx.api.requestContact({chatId, score: 20 }
 
   ).catch(console.error);
 });
@@ -64,24 +71,16 @@ bot.onCallbackQuery((ctx) => {
   const callbackQuery = ctx.update.callback_query;
   console.log(`Received callback query: ${callbackQuery.data}`);
   console.log(ctx.update.callback_query.game_short_name);
-
-  if (callbackQuery.data === `play_${GAME_SHORT_NAME}`) {
     ctx.api.answerCallbackQuery({
       callback_query_id: callbackQuery.id,
-      url: 'https://t.me/PlayGroundGamesBot/PGGC'
+      url: 'https://yg-mini-app-test.netlify.app/'
     }).catch("sendERROR"+console.error);
-  }
-  else {
-    ctx.api.answerCallbackQuery({
-      callback_query_id: callbackQuery.id,
-      url: 'https://yared-portfolio-site.vercel.app/'
-    }).catch("sendERROR"+console.error);
-  }
 });
 
 // Handle any other text message
 bot.onMessage((ctx) => {
     const chatId = ctx.update.message.chat.id;
+    console.log(ctx.update);
     ctx.api.sendMessage({
         chat_id: chatId,
         text: "I'm a game bot! Try /game to start."
