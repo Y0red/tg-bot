@@ -37,6 +37,14 @@ bot.onCommand('/game', (ctx) => {
     ).catch(console.error);
 });
 
+bot.onCommand('/share', (ctx) => {
+    //bot.commandHandlers.get('/start')(ctx);
+    console.log(`sending game`);
+    const chatId = ctx.update.message.chat.id;
+  ctx.api.requestContact({
+      chat_id: chatId}
+    ).catch(console.error);
+});
 // Handle the /menu command for Mini Apps
 bot.onCommand('/menu', (ctx) => {
   const chatId = ctx.update.message.chat.id;
@@ -57,13 +65,6 @@ bot.onCommand('/score', (ctx) => {
   ).catch(console.error);
 });
 
-bot.onCommand('/share', (ctx) => {
-  const chatId = ctx.update.message.chat.id;
-  console.log('sharing contact');
-  ctx.api.requestContact({chatId, score: 20 }
-
-  ).catch(console.error);
-});
 
 
 // Handle the callback query when the user clicks "Launch Game!"
