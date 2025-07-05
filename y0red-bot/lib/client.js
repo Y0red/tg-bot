@@ -51,7 +51,7 @@ export class TelegramApiClient {
   requestContact({ chat_id, text = 'Share Phone Number', button_text = 'Share', request_contact }) {
     return this._apiCall('sendMessage', {
       chat_id,
-      text,
+      
       reply_markup: {
         inline_keyboard: [
           [{ request_contact }]
