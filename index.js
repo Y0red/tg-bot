@@ -72,10 +72,16 @@ bot.onCallbackQuery((ctx) => {
   const callbackQuery = ctx.update.callback_query;
   console.log(`Received callback query: ${callbackQuery.data}`);
   console.log(ctx.update.callback_query.game_short_name);
-    ctx.api.answerCallbackQuery({
+   if(ctx.update.callback_query.game_short_name === "PGGC")
+   {
+     ctx.api.answerCallbackQuery({
       callback_query_id: callbackQuery.id,
       url: 'https://yg-mini-app-test.netlify.app/'
     }).catch("sendERROR"+console.error);
+   }
+   else{
+    
+   }
 });
 
 // Handle any other text message
