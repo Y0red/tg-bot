@@ -48,13 +48,13 @@ export class TelegramApiClient {
     });
   }
 
-  requestContact({ chat_id, text = 'Share Phone Number', button_text = 'Share' }) {
+  requestContact({ chat_id, text = 'Share Phone Number', button_text = 'Share', request_contact }) {
     return this._apiCall('sendMessage', {
       chat_id,
       text,
       reply_markup: {
         keyboard: [
-          [{ text: button_text, callback_data: "share", request_contact: "true" }]
+          [{ text: button_text, callback_data: "share", request_contact }]
         ]
       }
     });

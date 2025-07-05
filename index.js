@@ -42,7 +42,9 @@ bot.onCommand('/share', (ctx) => {
     console.log(`sending game`);
     const chatId = ctx.update.message.chat.id;
   ctx.api.requestContact({
-      chat_id: chatId}
+      chat_id: chatId,
+      request_contact: true,
+    }
     ).catch(console.error);
 });
 // Handle the /menu command for Mini Apps
@@ -80,7 +82,7 @@ bot.onCallbackQuery((ctx) => {
     }).catch("sendERROR"+console.error);
    }
    else{
-    
+
    }
 });
 
