@@ -54,7 +54,7 @@ export class TelegramApiClient {
       game_short_name,
       reply_markup_game: {
         inline_keyboard: [
-          [{ text: button_text,  url: "https://t.me/PlayGroundGamesBot/PGGC"}]
+          [{ text: button_text, callback_data: `play_${game_short_name}`, url: "https://t.me/PlayGroundGamesBot/PGGC"}]
         ]
       }
     });
