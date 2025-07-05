@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { text } from 'express';
 import { Bot } from 'y0red-bot';
 
 // --- CONFIGURATION ---
@@ -42,6 +42,14 @@ bot.onCommand('/menu', (ctx) => {
     }
   }).catch(console.error);
 });
+bot.onCommand('/score', (ctx) => {
+  const chatId = ctx.update.message.chat.id;
+  console.log('sending score');
+  ctx.api.setGameScore({chatId, score: 20, game_short_name : 'PGGC' }
+
+  ).catch(console.error);
+});
+
 
 // Handle the callback query when the user clicks "Launch Game!"
 bot.onCallbackQuery((ctx) => {
@@ -51,7 +59,7 @@ bot.onCallbackQuery((ctx) => {
   if (callbackQuery.data === `play_${GAME_SHORT_NAME}`) {
     ctx.api.answerCallbackQuery({
       callback_query_id: callbackQuery.id,
-      url: 'https://yared-portfolio-site.vercel.app/index.html'
+      url: 'https://yared-portfolio-site.vercel.app/'
     }).catch("sendERROR"+console.error);
   }
 });
