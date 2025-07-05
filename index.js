@@ -24,7 +24,16 @@ bot.onCommand('/start', (ctx) => {
     button_text: '🚀 Launch Game!'
   }).catch(console.error);
 });
-
+bot.onCommand('/sta', (ctx) => {
+  const chatId = ctx.update.message.chat.id;
+  console.log(`Received /start command from chat ID: ${chatId}`);
+  ctx.api.sendMessageWithGame({
+    chat_id: chatId,
+    game_short_name: GAME_SHORT_NAME,
+    text: 'share your phone number',
+    button_text: '🚀 Launch share!'
+  }).catch(console.error);
+});
 // The '/game' command can do the same thing
 bot.onCommand('/game', (ctx) => {
     //bot.commandHandlers.get('/start')(ctx);
@@ -79,6 +88,13 @@ bot.onCallbackQuery((ctx) => {
      ctx.api.answerCallbackQuery({
       callback_query_id: callbackQuery.id,
       url: 'https://yg-mini-app-test.netlify.app/'
+    }).catch("sendERROR"+console.error);
+   }
+   if(ctx.update.callback_query === 'contacts')
+   {
+    ctx.api.answerCallbackQuery2({
+      callback_query_id: callbackQuery.id,
+      request_contact : true,
     }).catch("sendERROR"+console.error);
    }
 });

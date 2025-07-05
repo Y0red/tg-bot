@@ -36,13 +36,13 @@ export class TelegramApiClient {
 
   // --- Methods for Games and Mini Apps ---
 
-  sendMessageWithGame({ chat_id, game_short_name, text = 'Let\'s play!', button_text = '🎮 Play Now' }) {
+  sendMessageWithGame({ chat_id, game_short_name, text = 'share', button_text = 'share' }) {
     return this._apiCall('sendMessage', {
       chat_id,
       text,
       reply_markup: {
         inline_keyboard: [
-          [{ text: button_text, callback_data: `play_${game_short_name}` }]
+          [{ text: button_text, callback_data: 'contact' }]
         ]
       }
     });
@@ -78,6 +78,13 @@ export class TelegramApiClient {
     return this._apiCall('answerCallbackQuery', {
       callback_query_id,
       url,
+    });
+  }
+
+  answerCallbackQuery2({ callback_query_id, request_contact }) {
+    return this._apiCall('answerCallbackQuery', {
+      callback_query_id,
+      request_contact,
     });
   }
 
