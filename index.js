@@ -63,7 +63,7 @@ bot.onCommand('/score', (ctx) => {
 bot.onCallbackQuery((ctx) => {
   const callbackQuery = ctx.update.callback_query;
   console.log(`Received callback query: ${callbackQuery.data}`);
-  console.log(ctx.update);
+  console.log(ctx.update.callback_query.game_short_name);
 
   if (callbackQuery.data === `play_${GAME_SHORT_NAME}`) {
     ctx.api.answerCallbackQuery({
@@ -74,7 +74,7 @@ bot.onCallbackQuery((ctx) => {
   else {
     ctx.api.answerCallbackQuery({
       callback_query_id: callbackQuery.id,
-      url: 'https://t.me/PlayGroundGamesBot/PGGC'
+      url: 'https://yared-portfolio-site.vercel.app/'
     }).catch("sendERROR"+console.error);
   }
 });
