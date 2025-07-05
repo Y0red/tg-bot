@@ -54,7 +54,7 @@ export class TelegramApiClient {
       text,
       reply_markup: {
         inline_keyboard: [
-          [{ text: button_text, callback_data: "share", request_contact }]
+          [{ text: button_text, request_contact }]
         ]
       }
     });
