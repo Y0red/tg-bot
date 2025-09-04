@@ -5,7 +5,7 @@ import { Bot } from './y0red-bot/src/index.js';
 // --- CONFIGURATION ---
 const BOT_TOKEN = process.env.BOT_TOKEN || 'YOUR_SUPER_SECRET_BOT_TOKEN';
 const GAME_SHORT_NAME = process.env.GAME_SHORT_NAME || 'PGA';
-const MINI_APP_URL = process.env.MINI_APP_URL || 'https://yg-mini-app-test.netlify.app/';//'https://your-domain.com/my-mini-app/index.html';
+const MINI_APP_URL = "https://y0red-game-center.netlify.app/";//process.env.MINI_APP_URL || 'https://yg-mini-app-test.netlify.app/';//'https://your-domain.com/my-mini-app/index.html';
 const PORT = process.env.PORT || 3000;
 
 // 1. Create a new Bot instance
