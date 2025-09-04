@@ -88,7 +88,7 @@ bot.onCallbackQuery((ctx) => {
    {
      ctx.api.answerCallbackQuery({
       callback_query_id: callbackQuery.id,
-      url: 'https://yg-mini-app-test.netlify.app/'
+      url: MINI_APP_URL//'https://yg-mini-app-test.netlify.app/'
     }).catch("sendERROR"+console.error);
    }
    if(ctx.update.callback_query === 'contact')
