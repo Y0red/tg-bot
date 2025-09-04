@@ -1,6 +1,6 @@
 import express, { text } from 'express';
-//import { Bot } from 'y0red-bot';
-import { Bot } from './y0red-bot/src/index.js';
+import { Bot } from 'y0red-bot';
+//import { Bot } from './y0red-bot/src/index.js';
 
 // --- CONFIGURATION ---
 const BOT_TOKEN = process.env.BOT_TOKEN || 'YOUR_SUPER_SECRET_BOT_TOKEN';
